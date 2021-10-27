@@ -17,7 +17,7 @@ public class servertemp {
 		// serverSocket를 선언한다.
 		try (ServerSocket server = new ServerSocket()) {
 			// 포트는 9999로 오픈한다.
-			InetSocketAddress ipep = new InetSocketAddress(9999);
+			InetSocketAddress ipep = new InetSocketAddress(3000);
 			server.bind(ipep);
 			while (true) {
 				// 클라이언트가 접속할 때까지 대기한다.
@@ -44,18 +44,18 @@ public class servertemp {
 							// 콘솔에 출력한다.
 							System.out.println(msg);
 							// echo를 붙힌다.
-							msg = "Java server echo : " + msg;
-							// string을 byte배열 형식으로 변환한다.
-							data = msg.getBytes();
-							// ByteBuffer를 통해 데이터 길이를 byte형식으로 변환한다.
-							b = ByteBuffer.allocate(4);
-							// byte포멧은 little 엔디언이다.
-							b.order(ByteOrder.LITTLE_ENDIAN);
-							b.putInt(data.length);
-							// 데이터 길이 전송
-							sender.write(b.array(), 0, 4);
-							// 데이터 전송
-							sender.write(data);
+//							msg = "Java server echo : " + msg;
+//							// string을 byte배열 형식으로 변환한다.
+//							data = msg.getBytes();
+//							// ByteBuffer를 통해 데이터 길이를 byte형식으로 변환한다.
+//							b = ByteBuffer.allocate(4);
+//							// byte포멧은 little 엔디언이다.
+//							b.order(ByteOrder.LITTLE_ENDIAN);
+//							b.putInt(data.length);
+//							// 데이터 길이 전송
+//							sender.write(b.array(), 0, 4);
+//							// 데이터 전송
+//							sender.write(data);
 						}
 					} catch (Throwable e) {
 						e.printStackTrace();
