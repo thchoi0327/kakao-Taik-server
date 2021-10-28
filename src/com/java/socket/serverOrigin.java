@@ -10,7 +10,7 @@ import java.nio.ByteOrder;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class servertemp {
+public class serverOrigin {
 	public static void main(String... args) {
 		// 클라이언트 소켓을 받을 threadpool를 선언한다. 쓰레드 풀안에는 최대 10개의 쓰레드를 가동시킬 수 있다.
 		ExecutorService clientService = Executors.newFixedThreadPool(10);
