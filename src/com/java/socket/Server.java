@@ -1,5 +1,6 @@
 package com.java.socket;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
@@ -19,10 +20,7 @@ public class Server {
 			while(true) {
 				System.out.println("´ë±â Áß . . .");
 				Socket client = server.accept();
-				InetSocketAddress remoteSocketAddress = (InetSocketAddress)client.getRemoteSocketAddress();
-				String remoteHostName = remoteSocketAddress.getAddress().getHostAddress();
-				int remoteHostPort = remoteSocketAddress.getPort();
-				System.out.println("[server] connected \nconnected socket address : "+remoteHostName + ", port : "+remoteHostPort);
+				
 				clientService.submit(() -> {
 					loop1 : try (OutputStream sender = client.getOutputStream();
 							InputStream receiver = client.getInputStream();){
