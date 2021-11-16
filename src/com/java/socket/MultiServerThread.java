@@ -8,14 +8,14 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
 
-public class MultiServer extends Thread{
+public class MultiServerThread extends Thread{
 	
 	private String nickName = null;
 	private Socket socket = null;
 	ArrayList<Socket> senderList = null;
 	ArrayList<String> senderNameList = null;
 	
-	public MultiServer(Socket socket, ArrayList<Socket> senderlist,ArrayList<String> senderNameList) throws IOException {
+	public MultiServerThread(Socket socket, ArrayList<Socket> senderlist,ArrayList<String> senderNameList) throws IOException {
 		this.socket = socket;
 		this.senderList = senderlist;
 		this.senderNameList = senderNameList;

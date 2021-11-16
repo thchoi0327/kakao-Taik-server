@@ -39,7 +39,7 @@ public class MultiServerOrigin {
 	                
 	                System.out.println("[server] 채팅방 참가 ip :" + remoteHostName
 	                        + ", port:" + remoteHostPort);
-	            	new MultiServer(socket,senderList,senderNameList).start();
+	            	new MultiServerThread(socket,senderList,senderNameList).start();
 	            }
 	        }
 	        catch(IOException e){
